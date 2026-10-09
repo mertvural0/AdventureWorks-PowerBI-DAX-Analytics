@@ -23,8 +23,9 @@ This repository contains an end-to-end Power BI data analytics solution based on
 ## 🧠 DAX Formulas Implemented
 
 ### 1. Base Measures
-```dax
 Total Sales = SUM(FactInternetSales[SalesAmount])
+
+### 2. Context Manipulation (ALL vs ALLSELECTED)
 -- Ignores product and date filters (Global Total)
 Global Total Sales = CALCULATE([Total Sales], ALL(DimProduct), ALL(DimDate))
 
@@ -33,13 +34,14 @@ Selected Total Sales = CALCULATE([Total Sales], ALLSELECTED(DimProduct), ALLSELE
 
 -- Filtered Category Measure
 Bike Sales = CALCULATE([Total Sales], DimProductCategory[EnglishProductCategoryName] = "Bikes")
+
+### 3. Central Tendency Analysis
 Average Sales = AVERAGE(FactInternetSales[SalesAmount])
 
-🚀 Roadmap (Course Progress)
-[x] Basic & Advanced Context Filtering (CALCULATE, ALL, ALLSELECTED)
+---
 
-[x] Central Tendency & Customer Level Analysis
-
-[ ] Advanced Filtering (ALLEXCEPT & FILTER thresholds)
-
-[ ] Time Intelligence Analysis (YTD, Prior Year)
+## 🚀 Roadmap (Course Progress)
+- [x] Basic & Advanced Context Filtering (CALCULATE, ALL, ALLSELECTED)
+- [x] Central Tendency & Customer Level Analysis
+- [ ] Advanced Filtering (ALLEXCEPT & FILTER thresholds)
+- [ ] Time Intelligence Analysis (YTD, Prior Year)
