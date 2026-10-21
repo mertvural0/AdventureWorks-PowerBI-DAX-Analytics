@@ -43,5 +43,13 @@ Average Sales = AVERAGE(FactInternetSales[SalesAmount])
 ## 🚀 Roadmap (Course Progress)
 - [x] Basic & Advanced Context Filtering (CALCULATE, ALL, ALLSELECTED)
 - [x] Central Tendency & Customer Level Analysis
-- [ ] Advanced Filtering (ALLEXCEPT & FILTER thresholds)
-- [ ] Time Intelligence Analysis (YTD, Prior Year)
+- [x] Advanced Filtering (ALLEXCEPT & FILTER thresholds)
+- [x] Time Intelligence Analysis (YTD, Prior Year)
+
+### 4. Time Intelligence & Financial Metrics
+- **Sales MTD (Month-to-Date):**
+  ```dax
+  Sales MTD = CALCULATE([Toplam], DATESMTD(DimDate[FullDateAlternateKey]))
+  Sales YTD = CALCULATE([Toplam], DATESYTD(DimDate[FullDateAlternateKey]))
+  SAMEPERIOD = CALCULATE([Toplam], SAMEPERIODLASTYEAR(DimDate[FullDateAlternateKey]))
+  YoY Sales Growth % = DIVIDE([Toplam] - [SAMEPERIOD], [SAMEPERIOD], 0)
