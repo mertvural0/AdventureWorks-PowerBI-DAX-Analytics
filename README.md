@@ -6,7 +6,7 @@ This repository contains an end-to-end Power BI data analytics solution based on
 
 ## 📸 Dashboard Preview
 
-![Dashboard Preview](dashboard_preview.png.png)
+![Dashboard Preview](dashboard_preview_v2.png)
 
 ---
 
